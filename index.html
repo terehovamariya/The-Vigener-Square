@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Квадрат Виженера</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔐 Квадрат Виженера</h1>
+        <div class="subtitle">Полиалфавитный шифр подстановки</div>
+      </header>
+
+      <div class="main-content">
+        <div class="controls">
+          <div class="form-group">
+            <label for="alphabet">Алфавит:</label>
+            <select id="alphabet">
+              <option value="english">Английский (A-Z)</option>
+              <option value="russian">Русский (А-Я)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="key">Ключ:</label>
+            <input
+              type="text"
+              id="key"
+              placeholder="Введите ключ (только буквы выбранного алфавита)"
+              value="KEY"
+            />
+            <div id="keyStatus" class="key-status"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="text">Текст:</label>
+            <textarea id="text" placeholder="Введите текст для шифрования...">
+Hello,world!</textarea
+            >
+            >
+          </div>
+
+          <div class="button-group">
+            <button id="encryptBtn" class="encrypt-btn">
+              <span>🔒</span> Зашифровать
+            </button>
+            <button id="decryptBtn" class="decrypt-btn">
+              <span>🔓</span> Расшифровать
+            </button>
+          </div>
+
+          <div class="result-box">
+            <div class="result-label"><span>📋</span> Результат:</div>
+            <div id="result" class="result-text"></div>
+            <div id="errorMessage" class="error-message"></div>
+          </div>
+        </div>
+
+        <div class="visualization">
+          <h3>Квадрат Виженера</h3>
+          <p>Таблица для шифрования/дешифрования:</p>
+          <div class="square-container">
+            <table id="vigenereSquare" class="square-table"></table>
+          </div>
+          <div class="table-info"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="VigenereCipher.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
